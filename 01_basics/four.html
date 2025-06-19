@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit and remove element</title>
+</head>
+<body style = "background-color : #212121 ; color : #fff">
+    <ul class="language"> 
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    /*
+    Two functions to add a new list item into the unordered list
+    */
+    /*
+    function addlist_item(language){
+        const li = document.createElement('li');
+        li.innerHTML = `${language}`;
+        const ul = document.querySelector(".language");
+        ul.append(li);
+    }
+    addlist_item("python");
+    */
+    function addoptimise(language){
+        // create a node and then add
+        const li = document.createElement('li');
+        const createnode = document.createTextNode(language);
+        li.appendChild(createnode);
+        const ul = document.querySelector(".language");
+        ul.append(li);
+    }
+    addoptimise('cpp')
+    addoptimise('typescript')
+    addoptimise('python')
+    // -----------------------replace with---------------------
+    const secondelement = document.querySelector('li:nth-child(2)');
+    // secondelement.innerHTML = "mojo"
+    const newsecond = document.createElement('li');
+    newsecond.innerText = "Java"
+    secondelement.replaceWith(newsecond);
+    // secondelement.append(newsecond);
+
+    //-----------------------using outerHTML----------------------
+    const firstlang = document.querySelector('li:first-child')
+    firstlang.outerHTML = '<li>Ruby</li>'
+
+    // -----------------------remove last element-------------------
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+</html>
