@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai aur code part two</title>
+    <style>
+    body{
+        background-color: #212121;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" , style = "color: #fff">
+        <div class="day">Monday</div>
+        <!-- To check the nodeType of the comment  -->
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector(".parent")
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+
+    /*
+    --------------------iterating using for each loop--------------------
+        for each loop to iterate over the childrens (parent.children is a HTML collection)
+        const arr = Array.from(parent.children);
+        arr.forEach(function (child){
+            console.log(child.innerHTML);
+        })
+    */
+    /*
+    ---------------------iterating using for loop--------------------
+        for loop to iterate over the childrens (parent.children is a HTML collection)
+        for(let i = 0; i < parent.children.length; i++){
+            console.log(parent.children[i].innerHTML);
+        }
+    */
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // const day = document.querySelector(".day");
+    // console.log(day.parentElement);
+    // console.log(day.nextElementSibling);
+    // console.log(day.previousElementSibling);
+    
+    // childnodes returns the nodelist of all child nodes including text nodes, comment nodes, etc.
+    // children returns the HTMLCollection of only element nodes (ignores text nodes, comment nodes
+    console.log("NODES :" , parent.childNodes)
+    const childnodecheck = Array.from(parent.childNodes);
+    childnodecheck.forEach(function (nodes){
+        console.log(nodes.nodeName, nodes.nodeType);
+        if(nodes.nodeType == 1){
+            console.log(nodes.innerHTML);
+        }
+        else if(nodes.nodeType == 3){
+            console.log("This is a text node");
+        }
+        else if(nodes.nodeType == 8){
+            console.log("This is a comment node");
+        }
+    })
+</script>
+</html>
