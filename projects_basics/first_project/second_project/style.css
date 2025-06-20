@@ -1,0 +1,100 @@
+body {
+    /* background: linear-gradient(135deg, #74ebd5, #ACB6E5); */
+    background-color: #1e1e1e;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.5s ease;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #555;
+}
+
+.bmi-ranges {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.bmi-ranges ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bmi-ranges li {
+    padding: 5px 0;
+}
+
+.underweight {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+.normal {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.overweight {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.obese {
+    color: #dc3545;
+    font-weight: bold;
+}

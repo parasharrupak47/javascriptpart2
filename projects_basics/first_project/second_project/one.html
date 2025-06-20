@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmiForm">
+            <label for="height">Height (cm):</label>
+            <input type="string" id="height" placeholder="HEIGHT" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="string" id="weight" placeholder="WEIGHT" required>
+
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <!-- here the div container result is made on which we have to do the operation-->
+        <div id="result"></div>
+        <div class="bmi-ranges">
+            <h2>BMI Categories</h2>
+            <ul>
+                <li><span class="underweight">Underweight:</span> BMI less than 18.5</li>
+                <li><span class="normal">Normal weight:</span> BMI 18.5 - 24.9</li>
+                <li><span class="overweight">Overweight:</span> BMI 25 - 29.9</li>
+                <li><span class="obese">Obese:</span> BMI 30 and above</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
